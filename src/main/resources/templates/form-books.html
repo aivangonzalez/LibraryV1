@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+              integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+        <link rel="stylesheet" href="/css/style.css">
+        <title>Agregar Libro</title>
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light navStyle">
+                <a class="icon p-0 m-0 text-light" href="/"><i class="fas fa-home fa-2x"></i></a>
+                <div class="collapse navbar-collapse navPosition" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link font-weight-bolder text-light font-italic" href="/autor/lista">Autores</a>
+                        <a class="nav-link font-weight-bolder text-light font-italic" href="/editorial/lista">Editoriales</a>
+                        <a class="nav-link font-weight-bolder text-light font-italic" href="/libro/lista">Libros</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <div style="height: 12vh;"></div>
+                <div th:if="${exito}!=null" class="card text-white bg-success mb-3" >
+                    <div class="card-body">
+                        <h5 class="card-title">Exito</h5>
+                        <p class="card-text" th:text="${exito}"></p>
+                    </div>
+                </div>
+                <div th:if="${error}!=null" class="card text-white bg-danger mb-3" >
+                    <div class="card-body">
+                        <h5 class="card-title">Error</h5>
+                        <p class="card-text" th:text="${error}"></p>
+                    </div>
+                </div>
+            </section>
+            <section class="formPosition">
+                <h1>Formulario para agregar un libro</h1>
+                <form th:action="@{/libro/registro}" method="POST" class="col-6">
+                    <div class="form-group">
+                        <label for="isbn">ISBN</label>
+                        <input type="number" class="form-control" name="isbn">
+                    </div>
+                    <div class="form-group">
+                        <label for="titulo">Titulo</label>
+                        <input type="text" class="form-control" name="titulo">
+                    </div>
+                    <div class="form-group">
+                        <label for="anio">Año de Publicación</label>
+                        <input type="number" class="form-control" name="anio">
+                    </div>
+                    <div class="form-group">
+                        <label for="ejemplares">Ejemplares</label>
+                        <input type="number" class="form-control" name="ejemplares">
+                    </div>
+                    <div class="form-group">
+                        <label for="ejemplaresPrestados">Ejemplares Prestados</label>
+                        <input type="number" class="form-control" name="ejemplaresPrestados">
+                    </div>
+                    <div class="form-group">
+                        <label for="autor">Nombre del Autor</label>
+                        <input type="text" class="form-control" name="autor" aria-describedby="autorHelp">
+                        <small id="autorHelp" class="form-text text-muted">¡¡Recuerda!! ¡Antes de ingresar un libro necesitas ingresar su autor si no lo has hecho anteriormente!</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="editorial">Nombre de la Editorial</label>
+                        <input type="text" class="form-control" name="editorial" aria-describedby="editorialHelp" >
+                        <small id="editorialHelp" class="form-text text-muted">¡¡Recuerda!! ¡Antes de ingresar un libro necesitas ingresar su editorial si no lo has hecho anteriormente!</small>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success">Guardar</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <!-- Espacio para colocar las redes sociales, por ejemplo... -->
+            <div class="iconsPosition">
+                <div><a href="#" class="icon"><i class="fab fa-facebook-square fa-2x "></i></a></div>
+                <div><a href="#" class="icon"><i class="fab fa-instagram fa-2x "></i></a></div>
+                <div><a href="#" class="icon"><i class="fab fa-whatsapp fa-2x "></i></a></div>
+            </div>
+        </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+    </body>
+
+</html>

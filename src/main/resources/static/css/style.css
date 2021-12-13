@@ -1,0 +1,80 @@
+/* ---------------------------Estilos que afecta a todo----------------------- */
+h1{
+    padding-top: 4%;
+    text-align: center;
+}
+
+/* ---------------------------index----------------------- */
+/* HEADER */
+
+/* .navTransparency{
+    position: fixed;
+    z-index: 1;
+} */
+.navStyle{
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    
+} 
+
+.navPosition{
+    justify-content: center;
+}
+
+.sizePortada{
+    max-width: 100%;
+}
+
+/* MAIN */
+
+.cardsPosition{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
+
+/* FOOTER */
+
+.iconsPosition{
+    width: 100%;
+    height: 3.5em;
+    border-top: 1px solid #EEEEEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    padding-right: 2em;
+    color: #2C272E;
+}
+
+.icon:hover{
+    color: black;
+}
+/* ---------------------------Formularios----------------------- */
+
+.formPosition{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* ---------------------------Listas----------------------- */
+
+.listPosition{
+    padding-top: 5%;
+}
+
+.agregarBtn{
+    padding: 2%;
+    display: flex;
+}
